@@ -3,11 +3,11 @@ import {
   IconChartBar,
   IconDashboard,
   IconHelp,
-  IconInnerShadowTop,
   IconMessageChatbot,
   IconSettings,
   IconCalendar
 } from "@tabler/icons-react"
+import { MyGenLogo } from "@/components/MyGenLogo"
 
 
 import { NavMain } from "@/components/nav-main"
@@ -29,34 +29,34 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: IconDashboard,
     },
     {
-      title: "Chat",
-      url: "#",
+      title: "MyGennie",
+      url: "/chat",
       icon: IconMessageChatbot,
     },
     {
       title: "Analytics",
-      url: "#",
+      url: "/analytics",
       icon: IconChartBar,
     },
     {
       title: "Calendar",
-      url: "#",
+      url: "/calendar",
       icon: IconCalendar,
     }
   ],
   navSecondary: [
     {
       title: "Settings",
-      url: "#",
+      url: "/settings",
       icon: IconSettings,
     },
     {
       title: "Get Help",
-      url: "#",
+      url: "/help",
       icon: IconHelp,
     }
   ]
@@ -85,9 +85,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
-              <a href="#">
-                <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">MyGen</span>
+              <a href="/dashboard">
+                <MyGenLogo className="!size-9 logo-primary" size={36} />
+                <span className="text-base font-semibold">MyGen Wellness</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
