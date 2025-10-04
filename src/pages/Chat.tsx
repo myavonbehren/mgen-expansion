@@ -1,8 +1,7 @@
 import { useAuth } from '../contexts/AuthContext';
 import SidebardComponent from '../components/sidebar-main';
-import '../styles/Dashboard.css';
 
-const Dashboard = () => {
+const Chat = () => {
   const { user, isLoading } = useAuth();
 
   if (isLoading) {
@@ -18,10 +17,10 @@ const Dashboard = () => {
   }
 
   return (
-    <SidebardComponent title="Dashboard">
-      <p>Dashboard</p>
+    <SidebardComponent title="Chat">
+      <p>Chat</p>
     </SidebardComponent>
   );
 };
 
-export default Dashboard;
+export default Chat;
