@@ -28,3 +28,8 @@ claude.md
 deployment.md
 code.md
 styles.md
+ROUTING.md
+mcp.json
+
+.cursor/*
+.playwright-mcp/*
