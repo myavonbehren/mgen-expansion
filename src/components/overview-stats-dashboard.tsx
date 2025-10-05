@@ -38,48 +38,23 @@ const OverviewStatsDashboard = () => {
       ]
     }
     return (
-        <div className="flex flex-col md:contents">
-          {/* Mobile Layout - Square Cards */}
-          <div className="grid grid-cols-2 gap-4 md:hidden">
-            {data.stats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <Card key={index} className="border border-border rounded-[25px] p-4 bg-card flex flex-col gap-3">
-                  <div className={`flex items-center justify-center w-11 h-11 rounded-lg ${stat.bgColor}`}>
-                    <IconComponent className="size-6 text-white"/>
-                  </div>
-                  
-                  <div className="flex flex-col gap-1">
-                    <p className="text-xs font-medium">{stat.title}</p>
-                    <p className="text-2xl font-bold">{stat.value}</p>
-                    <p className="text-xs text-muted-foreground">{stat.unit}</p>
-                  </div>
-                </Card>
-              );
-            })}
-          </div>
-
-          {/* Desktop Layout - Individual Cards */}
-          <div className="hidden md:grid md:grid-cols-4 gap-4">
-            {data.stats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <Card key={index} className="border border-border rounded-[25px] p-6 bg-card">
-                  <div className="flex flex-col gap-4 items-start">
-                    <div className={`flex items-center justify-center w-11 h-11 rounded-[15px] ${stat.bgColor}`}>
-                      <IconComponent className="size-6 text-white"/>
-                    </div>
-                    
-                    <div className="flex flex-col gap-1">
-                      <p className="text-sm font-medium">{stat.title}</p>
-                      <p className="text-3xl font-bold">{stat.value}</p>
-                      <p className="text-sm text-muted-foreground">{stat.unit}</p>
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {data.stats.map((stat, index) => {
+            const IconComponent = stat.icon;
+            return (
+              <Card key={index} className="border border-border rounded-[25px] p-4 bg-card flex flex-col gap-3 md:gap-4">
+                <div className={`flex items-center justify-center w-11 h-11 rounded-lg ${stat.bgColor}`}>
+                  <IconComponent className="size-6 text-white"/>
+                </div>
+                
+                <div className="flex flex-col gap-1 md:text-left">
+                  <p className="text-xs md:text-sm font-medium">{stat.title}</p>
+                  <p className="text-2xl md:text-3xl font-bold">{stat.value}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">{stat.unit}</p>
+                </div>
+              </Card>
+            );
+          })}
         </div>
     )       
 }
