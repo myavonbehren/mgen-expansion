@@ -1,12 +1,11 @@
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
   IconSun, 
   IconBottleFilled, 
   IconToolsKitchen3, 
-  IconMoon,
-  IconClock
+  IconMoon
 } from "@tabler/icons-react";
 
 interface Activity {
@@ -47,11 +46,12 @@ const activities: Activity[] = [
 
 const ActivityLog = () => {
   return (
-    <Card className="w-full gap-4">
+    <Card className="gap-4 rounded-[25px] mb-4">
       <CardHeader>
-        <CardTitle className="flex items-center text-xl mb-0 gap-0">
+        <CardTitle className="flex items-center text-lg mb-0 gap-0">
           Today's Activity
         </CardTitle>
+        <CardDescription>Complete your personalized wellness activities to earn points and maintain your streak.</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="relative">
