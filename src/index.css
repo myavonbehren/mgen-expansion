@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Preline UI */
+@source "./node_modules/preline/dist/*.js";
+
+/* Plugins */
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -122,7 +126,48 @@
   }
 }
 
-/* Logo color utilities */
-.logo-primary {
-  fill: var(--logo-primary);
+@layer utilities {
+  /* Logo color utilities */
+  .logo-primary {
+    fill: var(--logo-primary);
+  }
+
+  /* Custom scrollbar (cross-browser) */
+  .custom-scrollbar {
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.554 0.046 257.417 / 40%) transparent;
+  }
+  .custom-scrollbar:hover {
+    scrollbar-color: oklch(0.554 0.046 257.417 / 60%) transparent;
+  }
+  /* WebKit */
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: oklch(0.554 0.046 257.417 / 40%);
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: oklch(0.554 0.046 257.417 / 60%);
+  }
+
+  /* Dark mode scrollbar */
+  .dark .custom-scrollbar {
+    scrollbar-color: oklch(0.708 0 0 / 40%) transparent;
+  }
+  .dark .custom-scrollbar:hover {
+    scrollbar-color: oklch(0.708 0 0 / 60%) transparent;
+  }
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: oklch(0.708 0 0 / 40%);
+  }
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: oklch(0.708 0 0 / 60%);
+  }
 }
