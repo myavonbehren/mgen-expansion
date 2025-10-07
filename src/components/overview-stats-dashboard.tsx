@@ -1,4 +1,4 @@
-import { IconFlame, IconTrophy, IconTarget, IconTrendingUp } from "@tabler/icons-react";
+import { IconFlame, IconTrophy, IconTrendingUp } from "@tabler/icons-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { Card } from "./ui/card";
 
@@ -22,13 +22,6 @@ const OverviewStatsDashboard = () => {
           bgColor: "bg-gradient-to-l from-yellow-300 to-yellow-500 dark:from-yellow-500 dark:to-yellow-600"
         },
         {
-          title: "Longest Streak",
-          value: user?.longestStreak || 0,
-          icon: IconTarget,
-          unit: "days",
-          bgColor: "bg-gradient-to-l from-green-400 to-green-500 dark:from-green-500 dark:to-green-600"
-        },
-        {
           title: "Daily Points",
           value: user?.dailyPoints || 0,
           icon: IconTrendingUp,
@@ -38,12 +31,12 @@ const OverviewStatsDashboard = () => {
       ]
     }
     return (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 h-full">
           {data.stats.map((stat, index) => {
             const IconComponent = stat.icon;
             return (
-              <Card key={index} className="border border-border rounded-[25px] p-4 bg-card flex flex-col gap-3 md:gap-4">
-                <div className={`flex items-center justify-center w-11 h-11 rounded-lg ${stat.bgColor}`}>
+            <Card key={index} className="rounded-[25px] p-6 bg-card flex flex-col justify-center gap-3 md:gap-4">
+            <div className={`flex items-center justify-center w-11 h-11 rounded-[15px] ${stat.bgColor}`}>
                   <IconComponent className="size-6 text-white"/>
                 </div>
                 
