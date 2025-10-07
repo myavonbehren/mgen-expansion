@@ -22,16 +22,12 @@ export default function SidebardComponent({ title, children }: SidebardComponent
       }
     >
       <AppSidebar variant="inset" />
-      <SidebarInset>
+      <SidebarInset className="flex flex-col overflow-hidden min-h-screen w-full">
+
+
         <SiteHeader title={title}/>
-        <div className="flex flex-1 flex-col">
-          <div className="@container/main flex flex-1 flex-col gap-2">
-            <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-              <div className="px-4 lg:px-6">
-                {children}
-              </div>
-            </div>
-          </div>
+        <div className="flex-1 overflow-y-auto p-6">
+        {children}
         </div>
       </SidebarInset>
     </SidebarProvider>
